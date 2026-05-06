@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: "Winkler Beam Interactive Suite"
+message: "If you use this software, please cite it using the metadata in this file."
+type: software
+authors:
+  - family-names: "Retama Velasco"
+    given-names: "Jaime"
+    orcid: "https://orcid.org/0000-0001-6451-5597"
+    affiliation: "Facultad de Estudios Superiores Aragón, Universidad Nacional Autónoma de México (UNAM)"
+    email: "jretamav@comunidad.unam.mx"
+repository-code: "https://github.com/jretamav/winkler-beam-interactive-suite"
+url: "https://github.com/jretamav/winkler-beam-interactive-suite"
+abstract: >-
+  An open-source educational toolkit that evaluates and visualizes, in real
+  time, the exact analytical solution of an infinite beam on a Winkler elastic
+  foundation under three loading scenarios: concentrated point load,
+  concentrated moment, and uniformly distributed load over a finite length.
+  The suite implements the closed-form solutions in vectorized NumPy and
+  exposes a Matplotlib-based graphical user interface with parameter sliders
+  and an inspection text box, designed to support structural engineering
+  education at the undergraduate level.
+keywords:
+  - Winkler model
+  - beam on elastic foundation
+  - structural engineering education
+  - interactive simulation
+  - Python
+  - courseware
+license: MIT
+version: "1.0.0"
+date-released: "2026-05-06"
