@@ -1,5 +1,9 @@
 # Winkler Beam Interactive Suite
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20059593.svg)](https://doi.org/10.5281/zenodo.20059593)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+
 An open-source educational toolkit for the analytical study of beams on elastic foundations (Winkler model) through real-time interactive simulation.
 
 This repository accompanies the manuscript *"Generative Artificial Intelligence as a Computational and Pedagogical Assistant: Analytical Derivation and Interactive Simulation of the Winkler Model"* (Retama Velasco, 2026), submitted to *Computer Applications in Engineering Education*.
@@ -72,7 +76,25 @@ All scripts follow the sign convention adopted in the manuscript:
 
 ## Citation
 
-If you use this software in academic work, please cite both the software and the accompanying article. A `CITATION.cff` file is provided so that GitHub generates a "Cite this repository" entry automatically.
+If you use this software in academic work, please cite it as follows:
+
+> Retama Velasco, J. (2026). *Winkler Beam Interactive Suite* (v1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.20059593
+
+BibTeX entry:
+
+```bibtex
+@software{retama2026winkler,
+  author       = {Retama Velasco, Jaime},
+  title        = {{Winkler Beam Interactive Suite}},
+  year         = {2026},
+  version      = {v1.0.0},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.20059593},
+  url          = {https://doi.org/10.5281/zenodo.20059593}
+}
+```
+
+A `CITATION.cff` file is provided so that GitHub also generates a "Cite this repository" entry automatically.
 
 ## License
 

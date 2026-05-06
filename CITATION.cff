@@ -10,6 +10,11 @@ authors:
     email: "jretamav@comunidad.unam.mx"
 repository-code: "https://github.com/jretamav/winkler-beam-interactive-suite"
 url: "https://github.com/jretamav/winkler-beam-interactive-suite"
+doi: "10.5281/zenodo.20059593"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20059593"
+    description: "Zenodo archive of v1.0.0"
 abstract: >-
   An open-source educational toolkit that evaluates and visualizes, in real
   time, the exact analytical solution of an infinite beam on a Winkler elastic
