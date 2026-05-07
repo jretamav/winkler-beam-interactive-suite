@@ -166,11 +166,11 @@ $$V(x) = 4EI\beta^3 \left(-\frac{P\beta}{2k}\right) e^{-\beta x}\cos\beta x = -\
 
 | Métrica | Valor |
 |---|---|
-| **M1** — Coherencia de signos | [pendiente] |
-| **M2** — Coherencia dimensional | [pendiente] |
-| **M3** — Aplicación correcta de CB | [pendiente] |
-| **M4** — Correctitud de solución final | [pendiente] |
-| **M5** — Errores algebraicos contables | [pendiente] |
+| **M1** — Coherencia de signos | 1 |
+| **M2** — Coherencia dimensional | 1 |
+| **M3** — Aplicación correcta de CB | 1 |
+| **M4** — Correctitud de solución final | 1 |
+| **M5** — Errores algebraicos contables | 0 |
 
 ## Justificación cualitativa de la evaluación
 

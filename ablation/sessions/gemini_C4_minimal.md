@@ -102,11 +102,11 @@ $$y(x)=\frac{P}{4u\sqrt{EIk_1}}e^{-u|x|}\left(\cos(v|x|)+\frac{u}{v}\sin(v|x|)\r
 
 | Métrica | Valor |
 |---|---|
-| **M1** — Coherencia de signos | [pendiente] |
-| **M2** — Coherencia dimensional | [pendiente] |
-| **M3** — Aplicación correcta de CB | [pendiente] |
-| **M4** — Correctitud de solución final | [pendiente] |
-| **M5** — Errores algebraicos contables | [pendiente] |
+| **M1** — Coherencia de signos | 0 |
+| **M2** — Coherencia dimensional | 1 |
+| **M3** — Aplicación correcta de CB | 1 |
+| **M4** — Correctitud de solución final | 1 |
+| **M5** — Errores algebraicos contables | 0 |
 
 ## Justificación cualitativa de la evaluación
 

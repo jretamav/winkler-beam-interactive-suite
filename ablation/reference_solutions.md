@@ -144,10 +144,23 @@ The qualitative form of the solution depends on the discriminant $\Delta = k_2^2
 **Reference solution for Case A** (the most commonly encountered in the literature):
 
 $$
-y(x) = -\frac{P}{2\,k_1}\cdot\frac{\alpha^2+\gamma^2}{\alpha\gamma}\, e^{-\alpha|x|}\!\left[\frac{\alpha}{\alpha^2+\gamma^2}\sin(\gamma|x|) + \frac{\gamma}{\alpha^2+\gamma^2}\cos(\gamma|x|)\right]
+y(x) = -\frac{P}{4\,\alpha\,\sqrt{EI\,k_1}}\, e^{-\alpha|x|}\!\left[\cos(\gamma|x|) + \frac{\alpha}{\gamma}\sin(\gamma|x|)\right]
 $$
 
-(equivalent forms exist; cf. Selvadurai 1979).
+Equivalently, factoring $1/\gamma$ inside the bracket:
+
+$$
+y(x) = -\frac{P}{4\,\alpha\,\gamma\,\sqrt{EI\,k_1}}\, e^{-\alpha|x|}\!\left[\gamma\cos(\gamma|x|) + \alpha\sin(\gamma|x|)\right]
+$$
+
+**Verification** (used during M4 scoring):
+- $y(0) = -\dfrac{P}{4\alpha\sqrt{EI\,k_1}}$.
+- Using $\alpha^2+\gamma^2 = \sqrt{k_1/EI}$, this is also $y(0) = -\dfrac{P}{4\alpha\,EI(\alpha^2+\gamma^2)}$.
+- Limit $k_2\to 0$: $\alpha = \gamma = \beta = \sqrt[4]{k_1/(4EI)}$, giving $y(0) = -\dfrac{P}{8EI\beta^3} = -\dfrac{P\beta}{2k_1}$ — the Winkler reference of C1, as required.
+
+**Derivation sketch:** with $y(x) = e^{-\alpha x}(A\cos\gamma x + B\sin\gamma x)$ for $x \ge 0$, the symmetry condition $y'(0)=0$ gives $B = (\alpha/\gamma)A$, and the third-derivative evaluation produces $y'''(0) = 2\alpha A(\alpha^2+\gamma^2)$. Imposing $-EI\,y'''(0^+) = -P/2$ (with $y'(0)=0$ canceling the Pasternak shear-layer term) yields $A = -P/[4\alpha\,EI(\alpha^2+\gamma^2)] = -P/(4\alpha\sqrt{EI\,k_1})$.
+
+(Equivalent forms exist; cf. Selvadurai 1979.)
 
 **Diagnostic checks for M4:**
 - The governing ODE **must** contain the term $-k_2\,y''$. A common failure mode is to ignore this term and "hallucinate" a Winkler-type ODE with a modified $k$. This yields M4 = 0 immediately.

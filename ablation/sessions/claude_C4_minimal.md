@@ -149,11 +149,11 @@ El parámetro $\alpha$ controla la **tasa de decaimiento espacial** y aumenta co
 
 | Métrica | Valor |
 |---|---|
-| **M1** — Coherencia de signos | [pendiente] |
-| **M2** — Coherencia dimensional | [pendiente] |
-| **M3** — Aplicación correcta de CB | [pendiente] |
-| **M4** — Correctitud de solución final | [pendiente] |
-| **M5** — Errores algebraicos contables | [pendiente] |
+| **M1** — Coherencia de signos | 0 |
+| **M2** — Coherencia dimensional | 0 |
+| **M3** — Aplicación correcta de CB | 1 |
+| **M4** — Correctitud de solución final | 0 |
+| **M5** — Errores algebraicos contables | 2 |
 
 ## Justificación cualitativa de la evaluación
 
@@ -169,6 +169,11 @@ El parámetro $\alpha$ controla la **tasa de decaimiento espacial** y aumenta co
 - **Cortante efectivo Pasternak:** $V_{eff} = -EI y''' + k_2 y'$ — correcto y específico de Pasternak.
 - **Convención implícita:** $M = -EI y''$ (no declarada explícitamente, pero implícita en el cortante efectivo). Consistente con $y$ positivo abajo.
 - **Resultado final:** $y(0) = +P\beta/(4 EI \alpha (\alpha^2 + \beta^2))$ POSITIVO, congruente con $y$-abajo.
-- **Verificación del límite Winkler ($k_2 \to 0$):** explícitamente desarrollada y conduce a $y = P\lambda/(2 k_1) e^{-\lambda|x|}(\cos+\sin)$ — coincide con Hetényi clásico.
+- **🚨 Error dimensional en la solución boxed:** la fórmula declarada como principal,
+  $$y(x) = \frac{P\beta}{4EI\alpha(\alpha^2+\beta^2)}\,e^{-\alpha|x|}\left[\cos\beta x + (\alpha/\beta)\sin\beta|x|\right]$$
+  tiene coeficiente **adimensional** y bracket adimensional, por lo que $y(x)$ resulta adimensional en lugar de $[L]$. La forma "factorizada" que Claude presenta como equivalente,
+  $$y(x) = \frac{P}{4EI\alpha\beta(\alpha^2+\beta^2)}\,e^{-\alpha|x|}[\beta\cos+\alpha\sin],$$
+  **sí** tiene unidades de longitud, pero **no es algebraicamente equivalente** a la primera (difieren por factor $\beta$). Penalizado en M2.
+- **Verificación del límite Winkler ($k_2 \to 0$) — incorrecta:** Claude afirma que la solución se reduce a $P\lambda/(2k_1)\,e^{-\lambda|x|}(\cos+\sin)$, pero sustituyendo $\alpha=\beta=\lambda$ en su fórmula boxed se obtiene $P/(8EI\lambda^2)$, que difiere por un factor $\lambda$ y además es adimensional. La afirmación del modelo de que "se reduce a Winkler" es falsa para la forma boxed.
 - **Sección de interpretación física:** explica el rol de $\alpha$ y $\beta$ como tasas de decaimiento y longitud de onda, conectando con observaciones de suelos reales.
 - **Comparación con Gemini C4 minimal:** ambos resolvieron Pasternak limpiamente. Claude se distingue por presentar los **tres casos del discriminante** explícitamente y por la sección física más elaborada. Gemini presentó solo el caso subamortiguado.
