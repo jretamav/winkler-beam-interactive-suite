@@ -8,13 +8,15 @@ This folder contains the protocol, prompts, evaluation rubric and raw model outp
 
 The study evaluates whether the **phenomenological scaffolding** documented in Appendix A of the manuscript actually affects the quality of the analytical derivation produced by a Large Language Model — and whether this effect generalizes across model providers.
 
-### Independent variables
+### Independent variables (primary study)
 
 | Factor | Levels |
 |---|---|
-| Model | Gemini 3 Pro (Google) · Claude Opus 4.7 (Anthropic) |
-| Condition | Without scaffolding · With scaffolding |
+| Model | Gemini 3.1 Pro (Google) |
+| Condition | Without scaffolding (`minimal`) · With scaffolding (`scaffolded`) |
 | Test case | C1 · C2 · C3 · C4 |
+
+The ablation reported in the manuscript is restricted to **Gemini 3.1 Pro**, the model effectively used in the analytical derivation of the article. Cross-model sessions on Claude Opus 4.7 are archived here as **supplementary exploratory data** (see *Supplementary cross-model data* below) and are not part of the primary evidence reported in the manuscript.
 
 ### Test cases
 
@@ -27,7 +29,9 @@ The study evaluates whether the **phenomenological scaffolding** documented in A
 
 ### Total executions
 
-4 cases × 2 models × 2 conditions = **16 sessions**, each in a fresh chat to prevent context contamination.
+**Primary study**: 4 cases × 2 conditions = **8 sessions** on Gemini 3.1 Pro, each in a fresh chat to prevent context contamination.
+
+**Supplementary cross-model data (not reported in the manuscript as primary evidence)**: 8 sessions on Claude Opus 4.7 (default configuration) + 4 sessions on Claude Opus 4.7 with extended thinking enabled, archived for transparency and as material for future work on cross-model transferability of the scaffolding.
 
 ### Dependent variables
 
@@ -45,9 +49,9 @@ The full operational rubric is provided in `rubric.md`.
 
 ## Protocol
 
-For each of the 16 cells of the experimental design, follow exactly these steps:
+For each cell of the experimental design (8 primary cells on Gemini 3.1 Pro, plus the supplementary Claude cells if performed), follow exactly these steps:
 
-1. Open a **new, clean chat session** in the corresponding model's interface (gemini.google.com or claude.ai). Do not reuse a session.
+1. Open a **new, clean chat session** in the corresponding model's interface (gemini.google.com for the primary study; claude.ai for supplementary data). Do not reuse a session.
 2. Open `prompts.md` and locate the prompt corresponding to the case and condition under evaluation.
 3. Copy the **entire prompt** verbatim and paste it as the first message of the session.
 4. Wait for the model to complete its full response.
@@ -63,7 +67,7 @@ For each of the 16 cells of the experimental design, follow exactly these steps:
 
 ## Evaluation phase
 
-Once the 16 session files are populated, the evaluation is performed by applying `rubric.md` independently to each file and recording the scores in `results.csv` (generated in the analysis phase).
+Once the 8 primary session files (Gemini 3.1 Pro) are populated, the evaluation is performed by applying `rubric.md` independently to each file and recording the scores in `results.csv`. The supplementary Claude sessions are scored under the same rubric and stored in the same file, flagged in the `dataset` column as `supplementary`.
 
 ## Reference solutions
 

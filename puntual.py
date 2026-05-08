@@ -9,10 +9,10 @@ def calcular_viga_analitica(EI, k, P):
     
     def obtener_punto(x_in):
         ax = np.abs(x_in)
+        sgn = np.where(np.asarray(x_in) >= 0, 1.0, -1.0)
         y = -(P * beta / (2 * k)) * np.exp(-beta * ax) * (np.cos(beta * ax) + np.sin(beta * ax))
         M = (P / (4 * beta)) * np.exp(-beta * ax) * (np.cos(beta * ax) - np.sin(beta * ax))
-        V = np.where(x_in >= 0, -(P / 2) * np.exp(-beta * x_in) * np.cos(beta * x_in),
-                                 (P / 2) * np.exp(beta * x_in) * np.cos(beta * x_in))
+        V = -sgn * (P / 2) * np.exp(-beta * ax) * np.cos(beta * ax)
         return y, M, V
 
     y_v, M_v, V_v = obtener_punto(x_vec)
