@@ -1,11 +1,11 @@
 # Bitácora de ejecución — Estudio de ablación
 
-> Copia este archivo a `sessions/{model}_{case}_{condition}.md` antes de la ejecución. Llena los campos en orden.
+> Copia este archivo a `sessions/gemini_{case}_{condition}.md` antes de la ejecución. Llena los campos en orden.
 
 ## Metadatos
 
 - **Caso:** [C1 / C2 / C3 / C4]
-- **Modelo:** [gemini-3-pro / claude-opus-4-7]
+- **Modelo:** gemini-3.1-pro
 - **Condición:** [minimal / scaffolded]
 - **Fecha y hora de ejecución (zona horaria local):** [YYYY-MM-DD HH:MM, México Central]
 - **Versión exacta del modelo (si visible en la interfaz):** [...]

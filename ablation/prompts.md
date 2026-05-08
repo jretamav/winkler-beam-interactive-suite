@@ -1,10 +1,10 @@
 # Prompts del estudio de ablación
 
-Este archivo contiene los **8 prompts únicos** que componen el experimento (4 casos × 2 condiciones). Cada prompt se ejecuta una vez en Gemini 3 Pro y otra en Claude Opus 4.7, para un total de 16 sesiones.
+Este archivo contiene los **8 prompts únicos** que componen el experimento (4 casos × 2 condiciones), aplicados al modelo **Gemini 3.1 Pro** para un total de 8 sesiones.
 
 **Instrucciones de uso:**
 
-1. Abre una sesión limpia en gemini.google.com o claude.ai (modelo Opus 4.7).
+1. Abre una sesión limpia en gemini.google.com.
 2. Localiza abajo el bloque correspondiente al caso y condición.
 3. Copia desde la línea inmediatamente posterior al encabezado `>>> COPIAR DESDE AQUÍ` hasta la línea inmediatamente anterior al encabezado `<<< HASTA AQUÍ`.
 4. Pega como primer mensaje. No añadas nada antes ni después.

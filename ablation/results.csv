@@ -7,15 +7,3 @@ gemini_C3_minimal,gemini-3.1-pro,C3,minimal,off,0,1,1,1,0,primary
 gemini_C3_scaffolded,gemini-3.1-pro,C3,scaffolded,off,1,1,1,1,0,primary
 gemini_C4_minimal,gemini-3.1-pro,C4,minimal,off,0,1,1,1,0,primary
 gemini_C4_scaffolded,gemini-3.1-pro,C4,scaffolded,off,1,1,1,1,0,primary
-claude_C1_minimal,claude-opus-4.7,C1,minimal,off,0,1,1,1,1,supplementary
-claude_C1_scaffolded,claude-opus-4.7,C1,scaffolded,off,1,1,1,1,0,supplementary
-claude_C2_minimal,claude-opus-4.7,C2,minimal,off,1,1,1,1,0,supplementary
-claude_C2_scaffolded,claude-opus-4.7,C2,scaffolded,off,0,1,1,1,1,supplementary
-claude_C3_minimal,claude-opus-4.7,C3,minimal,off,0,1,1,0,1,supplementary
-claude_C3_scaffolded,claude-opus-4.7,C3,scaffolded,off,0,1,1,0,2,supplementary
-claude_C4_minimal,claude-opus-4.7,C4,minimal,off,0,0,1,0,2,supplementary
-claude_C4_scaffolded,claude-opus-4.7,C4,scaffolded,off,0,1,1,0,3,supplementary
-claude_C1_minimal_THINKING,claude-opus-4.7,C1,minimal,on,0,1,1,1,0,supplementary
-claude_C1_scaffolded_THINKING,claude-opus-4.7,C1,scaffolded,on,1,1,1,1,0,supplementary
-claude_C2_minimal_THINKING,claude-opus-4.7,C2,minimal,on,0,1,1,1,0,supplementary
-claude_C2_scaffolded_THINKING,claude-opus-4.7,C2,scaffolded,on,1,1,1,0,1,supplementary
