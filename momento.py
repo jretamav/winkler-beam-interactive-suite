@@ -7,24 +7,24 @@ def calcular_viga_analitica(EI, k, M0):
     beta = (k / (4 * EI))**(1/4)
     x_vec = np.linspace(-10, 10, 1000)
     
-    def obtener_punto(x_in):
+    def evaluate_point(x_in):
         ax = np.abs(x_in)
         
-        # y(x) es impar (antisimétrica)
+        # y(x) is odd (antisymmetric)
         y = (M0 * beta**2 / k) * np.exp(-beta * ax) * np.sin(beta * x_in)
-        
-        # M(x) es impar (salto de M0 en el origen)
-        M = np.where(x_in >= 0, 
+
+        # M(x) is odd (jump of M0 at the origin)
+        M = np.where(x_in >= 0,
                      -(M0 / 2) * np.exp(-beta * ax) * np.cos(beta * ax),
                       (M0 / 2) * np.exp(-beta * ax) * np.cos(beta * ax))
-        
-        # V(x) es par (simétrica y continua)
+
+        # V(x) is even (symmetric and continuous)
         V = (M0 * beta / 2) * np.exp(-beta * ax) * (np.cos(beta * ax) + np.sin(beta * ax))
         
         return y, M, V
 
-    y_v, M_v, V_v = obtener_punto(x_vec)
-    return x_vec, y_v, M_v, V_v, obtener_punto
+    y_v, M_v, V_v = evaluate_point(x_vec)
+    return x_vec, y_v, M_v, V_v, evaluate_point
 
 # --- Variables Globales ---
 EI, k, M0, x_inspec = 250.0, 1000.0, 1000.0, 0.0

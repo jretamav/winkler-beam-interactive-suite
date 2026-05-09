@@ -7,7 +7,7 @@ def calcular_viga_analitica(EI, k, P):
     beta = (k / (4 * EI))**(1/4)
     x_vec = np.linspace(-10, 10, 1000)
     
-    def obtener_punto(x_in):
+    def evaluate_point(x_in):
         ax = np.abs(x_in)
         sgn = np.where(np.asarray(x_in) >= 0, 1.0, -1.0)
         y = -(P * beta / (2 * k)) * np.exp(-beta * ax) * (np.cos(beta * ax) + np.sin(beta * ax))
@@ -15,8 +15,8 @@ def calcular_viga_analitica(EI, k, P):
         V = -sgn * (P / 2) * np.exp(-beta * ax) * np.cos(beta * ax)
         return y, M, V
 
-    y_v, M_v, V_v = obtener_punto(x_vec)
-    return x_vec, y_v, M_v, V_v, obtener_punto
+    y_v, M_v, V_v = evaluate_point(x_vec)
+    return x_vec, y_v, M_v, V_v, evaluate_point
 
 # --- Variables Globales ---
 EI, k, P, x_inspec = 250.0, 1000.0, 1000.0, 0.0

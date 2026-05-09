@@ -12,21 +12,21 @@ def calcular_viga_analitica(EI, k, q, a):
     def B(z): return np.exp(-z) * np.sin(z)
     def C(z): return np.exp(-z) * (np.cos(z) - np.sin(z))
 
-    def obtener_punto(x_in):
+    def evaluate_point(x_in):
         ax = np.abs(x_in)
         sgn = np.sign(x_in) if x_in != 0 else 1.0
         
         if ax <= a / 2:
-            # Zona interior (|x| <= a/2)
-            # Deflexión y(x): y positivo hacia arriba -> y negativo hacia abajo
+            # Inner zone (|x| <= a/2)
+            # Deflection y(x): y positive upward -> y negative downward
             y = -(q / (2 * k)) * (2 - D(beta * (a / 2 + ax)) - D(beta * (a / 2 - ax)))
-            # Momento M(x):
+            # Bending moment M(x):
             M = (q / (4 * beta**2)) * (B(beta * (a / 2 + ax)) + B(beta * (a / 2 - ax)))
-            # Cortante V(x) = dM/dx (CORREGIDO PARA GARANTIZAR CONTINUIDAD)
+            # Shear V(x) = dM/dx (corrected to ensure continuity)
             V_mag = (q / (4 * beta)) * (C(beta * (a / 2 + ax)) - C(beta * (a / 2 - ax)))
             V = sgn * V_mag
         else:
-            # Zona exterior (|x| > a/2)
+            # Outer zone (|x| > a/2)
             y = -(q / (2 * k)) * (D(beta * (ax - a / 2)) - D(beta * (ax + a / 2)))
             M = -(q / (4 * beta**2)) * (B(beta * (ax - a / 2)) - B(beta * (ax + a / 2)))
             V_mag = -(q / (4 * beta)) * (C(beta * (ax - a / 2)) - C(beta * (ax + a / 2)))
@@ -34,12 +34,12 @@ def calcular_viga_analitica(EI, k, q, a):
             
         return y, M, V
 
-    res = [obtener_punto(val) for val in x_vec]
+    res = [evaluate_point(val) for val in x_vec]
     y_v = np.array([r[0] for r in res])
     M_v = np.array([r[1] for r in res])
     V_v = np.array([r[2] for r in res])
     
-    return x_vec, y_v, M_v, V_v, obtener_punto
+    return x_vec, y_v, M_v, V_v, evaluate_point
 
 # --- Variables Globales ---
 EI, k, q, a_len, x_inspec = 250.0, 1000.0, 500.0, 2.0, 0.0
